@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteRule ^packages-view/([a-zA-Z0-9-/]+)$ packages-view.php?id=$1
+RewriteRule ^blog-category/([a-z0-9-/]+)$ blog-category.php?id=$1
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+# php -- BEGIN cPanel-generated handler, do not edit
+# This domain inherits the “PHP” package.
+# php -- END cPanel-generated handler, do not edit

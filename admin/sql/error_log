@@ -1,0 +1,116 @@
+[11-Jun-2025 05:12:42 UTC] PHP Warning:  include(include/connectDB.php): Failed to open stream: No such file or directory in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 05:12:42 UTC] PHP Warning:  include(): Failed opening 'include/connectDB.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 05:12:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function connectDB() in /home1/worldjiy/public_html/admin/sql/forgot_password.php:4
+Stack trace:
+#0 {main}
+  thrown in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 4
+[11-Jun-2025 05:13:15 UTC] PHP Warning:  include(include/connectDB.php): Failed to open stream: No such file or directory in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 05:13:15 UTC] PHP Warning:  include(): Failed opening 'include/connectDB.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 05:13:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function connectDB() in /home1/worldjiy/public_html/admin/sql/forgot_password.php:4
+Stack trace:
+#0 {main}
+  thrown in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 4
+[11-Jun-2025 05:14:38 UTC] PHP Warning:  include(include/connectDB.php): Failed to open stream: No such file or directory in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 05:14:38 UTC] PHP Warning:  include(): Failed opening 'include/connectDB.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 05:14:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function connectDB() in /home1/worldjiy/public_html/admin/sql/forgot_password.php:4
+Stack trace:
+#0 {main}
+  thrown in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 4
+[11-Jun-2025 05:15:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/worldjiy/public_html/admin/sql/forgot_password.php:1) in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 20
+[11-Jun-2025 05:16:06 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/worldjiy/public_html/admin/sql/forgot_password.php:1) in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 20
+[11-Jun-2025 14:12:26 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/worldjiy/public_html/admin/sql/forgot_password.php:1) in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 20
+[11-Jun-2025 14:12:57 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 14:12:57 UTC] PHP Warning:  Undefined variable $pofile_sql in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:12:57 UTC] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home1/worldjiy/public_html/admin/sql/forgot_password.php:9
+Stack trace:
+#0 /home1/worldjiy/public_html/admin/sql/forgot_password.php(9): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:13:57 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 14:13:57 UTC] PHP Warning:  Undefined variable $pofile_sql in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:13:57 UTC] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home1/worldjiy/public_html/admin/sql/forgot_password.php:9
+Stack trace:
+#0 /home1/worldjiy/public_html/admin/sql/forgot_password.php(9): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:14:05 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 14:14:05 UTC] PHP Warning:  Undefined variable $pofile_sql in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:14:05 UTC] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home1/worldjiy/public_html/admin/sql/forgot_password.php:9
+Stack trace:
+#0 /home1/worldjiy/public_html/admin/sql/forgot_password.php(9): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:16:49 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 14:16:49 UTC] PHP Warning:  Undefined variable $pofile_sql in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:16:49 UTC] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home1/worldjiy/public_html/admin/sql/forgot_password.php:9
+Stack trace:
+#0 /home1/worldjiy/public_html/admin/sql/forgot_password.php(9): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:17:59 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 14:17:59 UTC] PHP Warning:  Undefined variable $pofile_sql in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:17:59 UTC] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home1/worldjiy/public_html/admin/sql/forgot_password.php:9
+Stack trace:
+#0 /home1/worldjiy/public_html/admin/sql/forgot_password.php(9): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:19:56 UTC] PHP Parse error:  syntax error, unexpected token "if", expecting "," or ";" in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 16
+[11-Jun-2025 14:20:08 UTC] PHP Parse error:  syntax error, unexpected token "if", expecting "," or ";" in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 16
+[11-Jun-2025 14:20:58 UTC] PHP Parse error:  syntax error, unexpected token "if", expecting "," or ";" in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 16
+[11-Jun-2025 14:21:04 UTC] PHP Parse error:  syntax error, unexpected token "if", expecting "," or ";" in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 16
+[11-Jun-2025 14:21:34 UTC] PHP Parse error:  syntax error, unexpected token "if", expecting "," or ";" in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 16
+[11-Jun-2025 14:23:18 UTC] PHP Parse error:  syntax error, unexpected token "if", expecting "," or ";" in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 16
+[11-Jun-2025 14:23:46 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 14:23:46 UTC] PHP Warning:  Undefined variable $pofile_sql in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:23:46 UTC] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home1/worldjiy/public_html/admin/sql/forgot_password.php:9
+Stack trace:
+#0 /home1/worldjiy/public_html/admin/sql/forgot_password.php(9): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:24:24 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 14:24:24 UTC] PHP Warning:  Undefined variable $pofile_sql in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:24:24 UTC] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home1/worldjiy/public_html/admin/sql/forgot_password.php:9
+Stack trace:
+#0 /home1/worldjiy/public_html/admin/sql/forgot_password.php(9): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:24:27 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 14:24:27 UTC] PHP Warning:  Undefined variable $pofile_sql in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:24:27 UTC] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home1/worldjiy/public_html/admin/sql/forgot_password.php:9
+Stack trace:
+#0 /home1/worldjiy/public_html/admin/sql/forgot_password.php(9): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:24:30 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 14:24:30 UTC] PHP Warning:  Undefined variable $pofile_sql in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:24:30 UTC] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home1/worldjiy/public_html/admin/sql/forgot_password.php:9
+Stack trace:
+#0 /home1/worldjiy/public_html/admin/sql/forgot_password.php(9): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:26:04 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 14:26:04 UTC] PHP Warning:  Undefined variable $pofile_sql in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:26:04 UTC] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home1/worldjiy/public_html/admin/sql/forgot_password.php:9
+Stack trace:
+#0 /home1/worldjiy/public_html/admin/sql/forgot_password.php(9): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:28:46 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 3
+[11-Jun-2025 14:28:46 UTC] PHP Warning:  Undefined variable $pofile_sql in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 14:28:46 UTC] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home1/worldjiy/public_html/admin/sql/forgot_password.php:9
+Stack trace:
+#0 /home1/worldjiy/public_html/admin/sql/forgot_password.php(9): mysqli_query(Object(mysqli), '')
+#1 {main}
+  thrown in /home1/worldjiy/public_html/admin/sql/forgot_password.php on line 9
+[11-Jun-2025 19:24:22 UTC] PHP Warning:  Undefined array key "image" in /home1/worldjiy/public_html/admin/sql/about.php on line 20
+[11-Jun-2025 19:51:59 UTC] PHP Warning:  Undefined array key "image" in /home1/worldjiy/public_html/admin/sql/about.php on line 20
+[15-Jun-2025 15:39:58 UTC] PHP Warning:  Undefined array key "image" in /home1/worldjiy/public_html/admin/sql/packages.php on line 127
+[15-Jun-2025 15:39:58 UTC] PHP Warning:  Undefined array key "image" in /home1/worldjiy/public_html/admin/sql/packages.php on line 130
+[15-Jun-2025 15:39:58 UTC] PHP Warning:  unlink(../image/): Is a directory in /home1/worldjiy/public_html/admin/sql/packages.php on line 131
+[15-Jun-2025 15:41:10 UTC] PHP Warning:  Undefined array key "image" in /home1/worldjiy/public_html/admin/sql/packages.php on line 127
+[15-Jun-2025 15:41:10 UTC] PHP Warning:  Undefined array key "image" in /home1/worldjiy/public_html/admin/sql/packages.php on line 130
+[15-Jun-2025 15:41:10 UTC] PHP Warning:  unlink(../image/): Is a directory in /home1/worldjiy/public_html/admin/sql/packages.php on line 131
+[17-Jun-2025 19:16:05 UTC] PHP Warning:  Undefined array key "image" in /home1/worldjiy/public_html/admin/sql/about.php on line 20
+[19-Jun-2025 02:39:16 UTC] PHP Warning:  Undefined array key "image" in /home1/worldjiy/public_html/admin/sql/packages.php on line 127
+[19-Jun-2025 02:39:16 UTC] PHP Warning:  Undefined array key "image" in /home1/worldjiy/public_html/admin/sql/packages.php on line 130
+[19-Jun-2025 02:39:16 UTC] PHP Warning:  unlink(../image/): Is a directory in /home1/worldjiy/public_html/admin/sql/packages.php on line 131

@@ -1,0 +1,607 @@
+/*************************************************
+  SERVICE SECTION – GOOGLE MATERIAL + BOOTSTRAP GRID
+**************************************************/
+
+.services-section {
+  padding: 32px 0 32px;
+  background: #f7f9fc;
+}
+
+.services-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.services-header,
+.section-title {
+  text-align: center;
+}
+
+.services-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #202124;
+}
+
+.services-subtitle {
+  font-size: 14px;
+  color: #5f6368;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 24px;
+}
+
+/***********************
+  CARD DESIGN
+************************/
+.service-card {
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  padding: 0;
+  transition: 0.25s ease;
+  text-align: left;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.14);
+  border-color: #1a73e8;
+}
+
+/***********************
+  CARD IMAGE
+************************/
+.service-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+/***********************
+  CARD BODY
+************************/
+.service-card-body {
+  padding: 18px;
+}
+
+.service-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.service-icon--blue { background: #e8f0fe; color: #1a73e8; }
+.service-icon--green { background: #e6f4ea; color: #188038; }
+.service-icon--orange { background: #fef3e2; color: #f29900; }
+
+.service-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #202124;
+  margin-bottom: 6px;
+}
+
+.service-desc {
+  font-size: 14px;
+  color: #5f6368;
+  margin-bottom: 12px;
+}
+
+.service-cta {
+  font-size: 13px;
+  color: #1a73e8;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+
+/*************************************************
+  2. GLOBAL POPUP STYLES (Taxi / Passport / Package)
+**************************************************/
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+}
+
+.popup-content {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px 22px 20px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  z-index: 9999999;
+}
+
+.popup-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.popup-subtitle {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 14px;
+}
+
+.popup-close {
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  font-size: 22px;
+  color: #555;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.popup-form-group {
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.popup-form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.popup-form-group input,
+.popup-form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d1d1;
+  font-size: 14px;
+}
+
+.popup-submit-btn {
+  width: 100%;
+  padding: 11px 0;
+  border-radius: 8px;
+  border: none;
+  background: #1d9bf0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.popup-submit-btn:hover {
+  background: #0d7ccd;
+}
+
+/*************************************************
+SEARCH PANEL
+**************************************************/
+.package-search-section {
+  padding: 32px 0 24px;
+  background: #ffffff;
+  border-top: 1px solid #edf0f4;
+}
+
+.search-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.search-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #202124;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+
+.search-subtitle {
+  font-size: 14px;
+  color: #5f6368;
+  margin-bottom: 28px;
+}
+
+.search-panel {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: #ffffff;
+  max-width: 860px;
+  margin: 20px auto 40px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  border: 1px solid #e2e3e7;
+}
+
+.search-panel .search-field {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-right: 1px solid #e6e6e6;
+  background: #fff;
+}
+
+.search-panel .search-field:last-child {
+  border-right: none;
+}
+
+.search-field-icon {
+  font-size: 18px;
+  color: #5f6368;
+}
+
+.search-field select {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-weight: 500;
+  background: transparent;
+  color: #202124;
+  cursor: pointer;
+}
+
+.search-field select option {
+  font-size: 15px;
+}
+
+.search-panel-btn {
+  padding: 16px 26px;
+  background: #1a73e8;
+  border: none;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+  height: 100%;
+}
+
+.search-panel-btn:hover {
+  background: #0f5bbd;
+}
+
+/* Mobile Style */
+@media(max-width: 768px) {
+
+  .search-panel {
+    flex-direction: column;
+    gap: 0;
+    border-radius: 18px;
+  }
+
+  .search-panel .search-field {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  .search-panel .search-field:last-child {
+    border-bottom: none;
+  }
+
+  .search-panel-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 0;
+    border-radius: 0 0 18px 18px;
+  }
+}
+
+/*************************************************
+  4. SEARCH RESULTS POPUP (Package list)
+**************************************************/
+.package-popup {
+  max-width: 1024px !important;
+  width: 95%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden !important;
+}
+
+#fallbackMessageBox {
+  margin-bottom: 10px;
+}
+
+#packageResultsContainer,
+.scrollable-results {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+}
+
+.results-grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+  gap: 18px;
+}
+
+/* fallback info bar */
+.fallback-box {
+  background: #fff7d1;
+  padding: 14px 16px;
+  border-radius: 6px;
+  border-left: 4px solid #ffb300;
+  font-size: 14px;
+}
+
+/*************************************************
+  5. PACKAGE CARD (inside results popup)
+**************************************************/
+.package-card {
+  max-width: 320px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  transition: 0.2s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-4px);
+}
+
+.package-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.package-card-body {
+  padding: 16px 18px 18px;
+}
+
+.package-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.package-meta {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.package-card-price {
+  color: #1d9bf0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.package-card-duration {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.package-card-btn {
+  width: 100%;
+  padding: 11px;
+  background: #1d9bf0;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.package-card-btn:hover {
+  background: #0d7ccd;
+}
+
+/*************************************************
+  6. BODY STATE WHEN POPUP OPEN
+**************************************************/
+body.popup-open {
+  overflow: hidden !important;
+}
+
+/*************************************************
+  ACHIEVEMENTS SECTION – GOOGLE MATERIAL STYLE
+**************************************************/
+
+body .achievements-section {
+  padding: 60px 0;
+  background: #ffffff !important;
+}
+
+body .achievements-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px !important;
+}
+
+@media (min-width: 768px) {
+  body .achievements-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+body .achievement-card {
+  background: #ffffff !important;
+  border-radius: 14px !important;
+  border: 1px solid #e6e6e6 !important;
+  padding: 32px 20px !important;
+  text-align: center !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06) !important;
+  transition: 0.2s ease-in-out !important;
+}
+
+body .achievement-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.10) !important;
+}
+
+body .achievement-value {
+  font-size: 38px !important;
+  font-weight: 700 !important;
+  color: #1a73e8 !important;
+  margin-bottom: 6px;
+}
+
+body .achievement-label {
+  font-size: 14px !important;
+  color: #5f6368 !important;
+  font-weight: 500 !important;
+}
+
+
+/*************************************************
+  FEATURED PACKAGES GRID – Home Page
+**************************************************/
+/*************************************************
+   FEATURED PACKAGES – CSS GRID (Perfect Alignment)
+**************************************************/
+
+.featured-container {
+  max-width: 1100px !important;
+}
+
+/* Core grid */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 columns */
+  gap: 24px;
+}
+
+/* Responsive */
+@media(max-width: 992px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+}
+
+@media(max-width: 600px) {
+  .featured-grid {
+    grid-template-columns: 1fr; /* 1 column */
+  }
+}
+
+/* Card */
+.package-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: .25s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+/* Image (full width, cover, no cropping issues) */
+.package-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover !important;
+  background: #f3f3f3;
+}
+
+/* Body */
+.package-body {
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Title */
+.package-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #202124;
+  margin-bottom: 6px;
+}
+
+/* Destination + Category */
+.package-location {
+  font-size: 13px;
+  color: #5f6368;
+  margin-bottom: 6px;
+}
+
+/* Price */
+.package-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a73e8;
+  margin-bottom: 12px;
+}
+
+.package-time {
+  font-size: 12px;
+  color: #5f6368;
+  font-weight: 400;
+}
+
+/* Enquiry Button stays at bottom ALWAYS */
+.package-body .package-enq-btn {
+  margin-top: auto;
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+/* Section Title (---- Title ----) */
+.section-title-lined {
+  text-align: center;
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.section-title-lined span {
+  font-size: 22px;
+  font-weight: 700;
+  padding: 0 18px;
+  background: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title-lined::before,
+.section-title-lined::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 38%;
+  height: 1.4px;
+  background: #d0d4da;
+}
+
+.section-title-lined::before { left: 0; }
+.section-title-lined::after  { right: 0; }
