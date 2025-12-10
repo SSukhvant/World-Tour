@@ -73,7 +73,7 @@
 <html lang="en">
 
 <head>
-    <base href="<?php echo $_SERVER['PHP_SELF'];?>" target="_self">
+  <base href="<?php echo $_SERVER['PHP_SELF'];?>" target="_self">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title><?= $profile_row['name'];?></title>
@@ -122,6 +122,7 @@
         <li><a href="index" class="<?= basename($_SERVER['PHP_SELF'])=='index.php'?'active':'' ?>">Home</a></li>
         <li><a href="about" class="<?= basename($_SERVER['PHP_SELF'])=='about.php'?'active':'' ?>">About</a></li>
         <li><a href="packages" class="<?= basename($_SERVER['PHP_SELF'])=='packages.php'?'active':'' ?>">Packages</a></li>
+        <li><a href="blog" class="<?= basename($_SERVER['PHP_SELF'])=='blog.php'?'active':'' ?>">Blog</a></li>
         <li><a href="contact" class="<?= basename($_SERVER['PHP_SELF'])=='contact.php'?'active':'' ?>">Contact</a></li>
       </ul>
       <!-- MOBILE TOGGLE (Required for Sailor JS) -->

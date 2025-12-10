@@ -178,6 +178,16 @@
                 <!-- /.nav-second-level -->
               </li>
 
+              <li>
+                <a href="#"><i class="fa fa-file-text-o fa-fw"></i> Blog <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                  <li>
+                    <a href="blog">Blog Posts</a>
+                  </li>
+                </ul>
+                <!-- /.nav-second-level -->
+              </li>
+
                <li>
                 <a href="#"><i class="fa fa-comment fa-fw"></i> Message <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
