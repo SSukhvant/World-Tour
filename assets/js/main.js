@@ -35,6 +35,23 @@
   mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
 
   /**
+ * Close Mobile Nav When Clicking Outside
+ */
+  document.addEventListener('click', function (e) {
+  
+  // if nav is not open → do nothing
+  if (!document.body.classList.contains('mobile-nav-active')) return;
+
+  const navmenu = document.querySelector('#navmenu');
+  const toggleBtn = document.querySelector('.mobile-nav-toggle');
+
+  // If click is outside navmenu and NOT on toggle button
+  if (!navmenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+    mobileNavToogle(); // close it
+  }});
+
+
+  /**
    * Hide mobile nav on same-page/hash links
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {

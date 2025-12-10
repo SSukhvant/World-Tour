@@ -1,46 +1,76 @@
-<?php include("include/header.php");?>
-	<!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Review</h2>
-        <p>All Reviews<br></p>
-      </div><!-- End Section Title -->
-      <div class="container">
+<?php include("include/header.php"); ?>
 
-              <div class="row gy-4">
-                <?php 
-                  $review_sql = "SELECT * FROM review ORDER BY id DESC";
-                  $review_query = mysqli_query($con,$review_sql);
-                  
-                ?>
-                <?php while($review_row = mysqli_fetch_assoc($review_query)) { ?>
+<main class="main">
 
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                  <div class="testimonial-item">
-                    <img src="admin/image/<?= $review_row['image'];?>" class="testimonial-img" alt="">
-                    <h3><?php echo $review_row['name'];?></h3>
-                    <h4><?php echo $review_row['email'];?></h4>
-                    <?php
-                      $rating_id = $review_row['star'];
-                      $rating_sql = "SELECT * FROM rating where id='$rating_id'";
-                      $rating_query = mysqli_query($con,$rating_sql);
-                      $rating_row = mysqli_fetch_assoc($rating_query);
-                    ?>
-                    <div class="stars">
-                      <?php echo $rating_row['rating_list']?>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      <span><?php echo $review_row['content']?></span>
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div><!-- End testimonial item -->
+  <!-- Page Title + Breadcrumb -->
+  <div class="page-title light-background py-4">
+    <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-lg-center">
+      <h1 class="mb-2 mb-lg-0">All Reviews</h1>
 
-              <?php }?>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="index">Home</a></li>
+          <li class="current">Reviews</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <!-- End Page Title -->
+
+  <!-- Testimonials Section -->
+  <section class="reviews-page section py-5">
+    <div class="container" style="max-width:1100px;" data-aos="fade-up">
+
+      <div class="row gy-4">
+
+        <?php 
+          $review_sql = "SELECT * FROM review ORDER BY id DESC";
+          $review_query = mysqli_query($con,$review_sql);
+        ?>
+
+        <?php while($r = mysqli_fetch_assoc($review_query)) { 
+          $rating_id = $r['star'];
+          $rating_sql = "SELECT * FROM rating WHERE id='$rating_id'";
+          $rating_query = mysqli_query($con,$rating_sql);
+          $rating_row = mysqli_fetch_assoc($rating_query);
+        ?>
+
+        <div class="col-12 col-md-6">
+          <div class="testimonial-card shadow-sm h-100" data-aos="fade-up">
+
+            <div class="d-flex align-items-start">
+
+              <!-- IMAGE -->
+              <img src="admin/image/<?= $r['image']; ?>" class="testimonial-img me-3" alt="">
+
+              <div class="flex-grow-1">
+                <h5 class="testimonial-name mb-1"><?= $r['name']; ?></h5>
+                <p class="testimonial-email mb-1"><?= $r['email']; ?></p>
+
+                <div class="testimonial-stars mb-1">
+                  <?= $rating_row['rating_list'] ?>
+                </div>
               </div>
 
             </div>
 
-    </section><!-- /Testimonials Section -->
-<?php include("include/footer.php");?>
+            <p class="testimonial-message mt-3">
+              <i class="bi bi-quote"></i>
+              <?= $r['content']; ?>
+              <i class="bi bi-quote quote-right"></i>
+            </p>
+
+          </div>
+        </div>
+
+        <?php } ?>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- End Testimonials -->
+
+</main>
+
+<?php include("include/footer.php"); ?>

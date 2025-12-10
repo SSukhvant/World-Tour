@@ -19,7 +19,16 @@
           <div class="carousel-container">
             <h2><?= $banner_row['title'];?><br></h2>
             <p><?= $banner_row['content'];?></p>
-            <a target="_blank" href="https://wa.me/<?= $about_row['phone']; ?>" class="btn-get-started">Call me Now</a>
+            <div class="hero-buttons mt-3">
+  <a target="_blank" href="https://wa.me/<?= $about_row['phone']; ?>" class="btn-hero-primary">
+    <i class="bi bi-telephone-fill"></i> Call Us
+  </a>
+
+  <a href="packages" class="btn-hero-outline">
+    <i class="bi bi-arrow-right-circle"></i> Get Started
+  </a>
+</div>
+
           </div>
         </div><!-- End Carousel Item -->
 
@@ -33,7 +42,15 @@
           <div class="carousel-container">
             <h2><?= $banner_row['title'];?><br></h2>
             <p><?= $banner_row['content'];?></p>
-            <a target="_blank" href="https://wa.me/<?= $about_row['phone']; ?>" class="btn-get-started">Call me Now</a>
+<div class="hero-buttons mt-3">
+  <a target="_blank" href="https://wa.me/<?= $about_row['phone']; ?>" class="btn-hero-primary">
+    <i class="bi bi-telephone-fill"></i> Call Us
+  </a>
+
+  <a href="packages" class="btn-hero-outline">
+    <i class="bi bi-arrow-right-circle"></i> Get Started
+  </a>
+</div>
           </div>
         </div><!-- End Carousel Item -->
 
@@ -47,7 +64,15 @@
           <div class="carousel-container">
             <h2><?= $banner_row['title'];?><br></h2>
             <p><?= $banner_row['content'];?></p>
-            <a target="_blank" href="https://wa.me/<?= $about_row['phone']; ?>" class="btn-get-started">Call me Now</a>
+<div class="hero-buttons mt-3">
+  <a target="_blank" href="https://wa.me/<?= $about_row['phone']; ?>" class="btn-hero-primary">
+    <i class="bi bi-telephone-fill"></i> Call Us
+  </a>
+
+  <a href="packages" class="btn-hero-outline">
+    <i class="bi bi-arrow-right-circle"></i> Get Started
+  </a>
+</div>
           </div>
         </div><!-- End Carousel Item -->
 
@@ -219,46 +244,54 @@ $featuredPackages = mysqli_query($con, "
 ");
 ?>
 
-<section class="featured-packages-section py-5">
-  <div class="container featured-container">
+<section class="py-5">
+  <div class="container" style="max-width: 1100px;">
 
-    <div class="section-title-lined mb-4">
+    <div class="text-center mb-4 position-relative section-title-lined">
       <span>Popular Packages</span>
     </div>
 
-    <!-- GRID (not bootstrap row/col) -->
-    <div class="featured-grid">
+    <div class="row g-4">
 
       <?php while($p = mysqli_fetch_assoc($featuredPackages)): ?>
-      <div class="package-card">
+      <div class="col-12 col-sm-6 col-lg-4">
 
-        <!-- Image -->
-        <img 
-          src="admin/image/<?= $p['image1'] ?>" 
-          class="package-img"
-          alt="<?= $p['title'] ?>"
-        >
+        <div class="card h-100 shadow-sm border-0">
 
-        <!-- Content -->
-        <div class="package-body">
+          <!-- IMAGE -->
+          <div class="ratio ratio-4x3">
+            <img 
+              src="admin/image/<?= $p['image1'] ?>" 
+              class="card-img-top img-fluid rounded-top"
+              style="object-fit: cover;"
+              alt="<?= $p['title'] ?>"
+            >
+          </div>
 
-          <h3 class="package-title"><?= $p['title'] ?></h3>
+          <!-- CARD BODY -->
+          <div class="card-body d-flex flex-column">
 
-          <p class="package-location">
-            <i class="bi bi-geo-alt-fill text-danger"></i>
-            <?= $p['destination'] ?> • <?= $p['category'] ?>
-          </p>
+            <h5 class="card-title fw-semibold mb-1"><?= $p['title'] ?></h5>
 
-          <p class="package-price">
-            ₹<?= $p['price'] ?> <span class="package-time"><?= $p['time'] ?></span>
-          </p>
+            <p class="text-muted small mb-2">
+              <i class="bi bi-geo-alt-fill text-danger"></i> 
+              <?= $p['destination'] ?> • <?= $p['category'] ?>
+            </p>
 
-          <button 
-            class="btn btn-primary w-100 package-enq-btn mt-auto"
-            onclick="openPackageEnquiry('<?= $p['title'] ?>')"
-          >
-            Enquire Now
-          </button>
+            <p class="fw-bold text-primary mb-4">
+              ₹<?= $p['price'] ?>
+              <span class="text-muted fw-normal small"><?= $p['time'] ?></span>
+            </p>
+
+            <!-- BUTTON STAYS AT THE BOTTOM -->
+            <a 
+              onclick="openPackageEnquiry('<?= $p['title'] ?>')" 
+              class="btn btn-primary w-100 mt-auto"
+            >
+              Enquire Now
+            </a>
+
+          </div>
 
         </div>
 
@@ -267,6 +300,7 @@ $featuredPackages = mysqli_query($con, "
 
     </div>
 
+    <!-- View All Button -->
     <div class="text-center mt-4">
       <a href="packages" class="btn btn-primary px-4 py-2 fw-semibold rounded-3">
         View All Packages
@@ -275,6 +309,206 @@ $featuredPackages = mysqli_query($con, "
 
   </div>
 </section>
+
+<section id="about" class="py-5 about-section">
+  <div class="container" style="max-width:1100px;">
+
+    <!-- Title -->
+    <!-- <div class="section-title-lined mb-4 text-center">
+      <span>About Us</span>
+    </div> -->
+          <div class="container py-5 section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p><?= $about_row['title']; ?><br></p>
+      </div><!-- End Section Title -->
+
+    <div class="row align-items-center g-5">
+
+      <!-- IMAGE -->
+      <div class="col-lg-5">
+        <div class="about-img-wrapper rounded shadow-sm">
+          <img 
+            src="admin/image/<?= $about_row['about_image']; ?>" 
+            alt="<?= $about_row['title']; ?>"
+            class="img-fluid w-100 h-100"
+          >
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="col-lg-7">
+
+        <!-- <h2 class="about-title fw-bold mb-3">
+          <?= $about_row['title']; ?>
+        </h2> -->
+
+        <p class="about-text mb-4">
+          <?= nl2br($about_row['content']); ?>
+        </p>
+
+        <!-- Highlights -->
+        <div class="row g-3 about-highlights">
+          
+          <div class="col-6 d-flex align-items-center gap-2">
+            <div class="highlight-icon">
+              <i class="bi bi-check-circle-fill"></i>
+            </div>
+            <span>Trusted Agency</span>
+          </div>
+
+          <div class="col-6 d-flex align-items-center gap-2">
+            <div class="highlight-icon">
+              <i class="bi bi-check-circle-fill"></i>
+            </div>
+            <span>Best Price Guarantee</span>
+          </div>
+
+          <div class="col-6 d-flex align-items-center gap-2">
+            <div class="highlight-icon">
+              <i class="bi bi-check-circle-fill"></i>
+            </div>
+            <span>100% Customizable Trips</span>
+          </div>
+
+          <div class="col-6 d-flex align-items-center gap-2">
+            <div class="highlight-icon">
+              <i class="bi bi-check-circle-fill"></i>
+            </div>
+            <span>24x7 Expert Support</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Achievements Section -->
+<section class="achievements-section">
+  <div class="achievements-container">
+
+    <div class="achievement-card">
+      <div class="achievement-icon">
+        <i class="bi bi-people-fill"></i>
+      </div>
+      <div class="achievement-value" data-value="10000">0</div>
+      <p class="achievement-label">Happy Customers</p>
+    </div>
+
+    <div class="achievement-card">
+      <div class="achievement-icon">
+        <i class="bi bi-airplane-fill"></i>
+      </div>
+      <div class="achievement-value" data-value="250">0</div>
+      <p class="achievement-label">Successful Trips</p>
+    </div>
+
+    <div class="achievement-card">
+      <div class="achievement-icon">
+        <i class="bi bi-geo-alt-fill"></i>
+      </div>
+      <div class="achievement-value" data-value="20">0</div>
+      <p class="achievement-label">Destinations Covered</p>
+    </div>
+
+    <div class="achievement-card">
+      <div class="achievement-icon">
+        <i class="bi bi-award-fill"></i>
+      </div>
+      <div class="achievement-value" data-value="8">0</div>
+      <p class="achievement-label">Years of Experience</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-5 testimonials-section">
+  <div class="container" style="max-width:1100px;">
+
+    <!-- Section Title -->
+    <!-- <div class="section-title-lined mb-4 text-center">
+      <span>Latest Reviews</span>
+    </div> -->
+              <!-- Section Title -->
+      <div class="container py-5 section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <p>Latest Reviews<br></p>
+        <span class="search-subtitle">Experiences Shared by Our Happy Customers</span>
+      </div><!-- End Section Title -->
+
+    <div class="row g-4">
+
+      <?php 
+        $review_sql = "SELECT * FROM review ORDER BY id DESC LIMIT 4";
+        $review_query = mysqli_query($con, $review_sql);
+      ?>
+
+      <?php while($review_row = mysqli_fetch_assoc($review_query)) { 
+
+        // Fetch Rating
+        $rating_id = $review_row['star'];
+        $rating_sql = "SELECT * FROM rating WHERE id='$rating_id'";
+        $rating_query = mysqli_query($con, $rating_sql);
+        $rating_row = mysqli_fetch_assoc($rating_query);
+      ?>
+
+      <div class="col-lg-6">
+
+        <div class="card testimonial-card shadow-sm border-0 h-100 d-flex flex-column" data-aos="fade-up">
+
+          <!-- Header -->
+          <div class="testimonial-header d-flex align-items-start">
+
+            <img 
+              src="admin/image/<?= $review_row['image']; ?>" 
+              class="testimonial-img me-3"
+              alt="<?= $review_row['name']; ?>"
+            >
+
+            <div class="flex-grow-1">
+
+              <h5 class="testimonial-name mb-1"><?= $review_row['name']; ?></h5>
+
+              <p class="testimonial-email mb-1">
+                <?= $review_row['email']; ?>
+              </p>
+
+              <div class="testimonial-stars mb-1">
+                <?= $rating_row['rating_list']; ?>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Review Content -->
+          <div class="testimonial-content mt-3 flex-grow-1 d-flex align-items-end">
+            <p class="testimonial-message mb-0">
+              <i class="bi bi-quote"></i>
+              <?= $review_row['content']; ?>
+              <i class="bi bi-quote quote-right"></i>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <?php } ?>
+
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="reviews" class="btn btn-primary px-4 fw-semibold">See More</a>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -307,33 +541,6 @@ $featuredPackages = mysqli_query($con, "
       </div>
     </section><!-- /About 2 Section -->
     </section><!-- /About Section -->
-
-<!-- Achievements Section -->
-<section class="achievements-section">
-  <div class="achievements-container">
-
-    <div class="achievement-card">
-      <div class="achievement-value" data-value="10000">0</div>
-      <p class="achievement-label">Happy Customers</p>
-    </div>
-
-    <div class="achievement-card">
-      <div class="achievement-value" data-value="250">0</div>
-      <p class="achievement-label">Successful Trips</p>
-    </div>
-
-    <div class="achievement-card">
-      <div class="achievement-value" data-value="20">0</div>
-      <p class="achievement-label">Destinations Covered</p>
-    </div>
-
-    <div class="achievement-card">
-      <div class="achievement-value" data-value="8">0</div>
-      <p class="achievement-label">Years of Experience</p>
-    </div>
-
-  </div>
-</section>
 
 
    <section id="about" class="about section">
@@ -415,6 +622,36 @@ $featuredPackages = mysqli_query($con, "
               </div>
             </div>
     </section><!-- /Testimonials Section -->
+
+    <!-- CTA Section -->
+<section class="cta-section py-5 mt-5">
+  <div class="container text-center" style="max-width:900px;">
+
+    <h2 class="cta-title mb-3">Ready to Plan Your Next Trip?</h2>
+
+    <p class="cta-subtitle mb-4">
+      Let our expert travel team help you customize the perfect itinerary 
+      for your dream vacation.
+    </p>
+
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+
+      <a href="contact" class="btn btn-primary px-4 py-2 fw-semibold rounded-3">
+        Contact Us
+      </a>
+
+      <button 
+        class="btn btn-outline-primary px-4 py-2 fw-semibold rounded-3"
+        onclick="openPackageEnquiry('General Enquiry')"
+      >
+        Enquire Now
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
     <!-- Package Enquiry Popup -->
 <div class="popup-overlay" id="packageEnquiryPopup">
   <div class="popup-content">

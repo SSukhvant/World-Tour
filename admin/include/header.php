@@ -184,6 +184,9 @@
                   <li>
                     <a href="message">Message List</a>
                   </li>
+                  <li>
+                    <a href="newsletter.php">Newsletter</a>
+                  </li>
                 </ul>
                 <!-- /.nav-second-level -->
               </li>
@@ -218,6 +221,9 @@
                 <ul class="nav nav-second-level">
                   <li>
                     <a href="profile">Profile</a>
+                  </li>
+                  <li>
+                    <a href="map">Map</a>
                   </li>
                   <li>
                 </ul>

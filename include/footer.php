@@ -1,56 +1,64 @@
-  <footer id="footer" class="footer dark-background">
+  <footer id="footer" class="footer bg-dark text-light py-5">
 
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index" class="logo d-flex align-items-center">
-            <span class="sitename"><?= $profile_row['name'];?></span>
+  <div class="container" style="max-width:1100px;">
+    <div class="row gy-4">
+
+      <!-- ABOUT -->
+      <div class="col-lg-4 col-md-6">
+        <h4 class="footer-title mb-3"><?= $profile_row['name']; ?></h4>
+
+        <p class="footer-text mb-2"><?= $about_row['location']; ?></p>
+        <p class="footer-text mb-1"><strong>Phone:</strong> <?= $about_row['phone']; ?></p>
+        <p class="footer-text"><strong>Email:</strong> <?= $about_row['email']; ?></p>
+
+        <div class="footer-social d-flex gap-3 mt-3">
+          <a href="<?= $social_row['facebook']; ?>" target="_blank" class="footer-social-icon">
+            <i class="bi bi-facebook"></i>
           </a>
-          <div class="footer-contact pt-3">
-            <p><?= $about_row['location'];?></p>
-            <p class="mt-3"><strong>Phone:</strong> <span><?= $about_row['phone'];?></span></p>
-            <p><strong>Email:</strong> <span><?= $about_row['email'];?></span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <!--<a target="_blank" href="<?= $social_row['twitter'];?>"><i class="bi bi-twitter-x"></i></a>-->
-            <a target="_blank" href="<?= $social_row['facebook'];?>"><i class="bi bi-facebook"></i></a>
-            <a target="_blank" href="<?= $social_row['instagram'];?>"><i class="bi bi-instagram"></i></a>
-            <!--<a target="_blank" href="<?= $social_row['linkedin'];?>"><i class="bi bi-linkedin"></i></a>-->
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="index">Home</a></li>
-            <li><a href="about">About us</a></li>
-            <li><a href="term-and-condition">Terms & Condition</a></li>
-            <li><a href="faq">FAQ</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="index">Home</a></li>
-            <li><a href="contact">Contact</a></li>            
-            <li><a href="packages">Packages</a></li>
-            <li><a href="reviews">Reviews</a></li>
-          </ul>
+          <a href="<?= $social_row['instagram']; ?>" target="_blank" class="footer-social-icon">
+            <i class="bi bi-instagram"></i>
+          </a>
         </div>
       </div>
-    </div>
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename"><?= $profile_row['name'];?></strong> <span>All Rights Reserved</span></p>
-      <!--<div  class="credits">Developed by <a target="_blank" href="https://www.freelancer.com/u/mithunsarker1516">Mithun Sarker</a>-->
+      <!-- USEFUL LINKS -->
+      <div class="col-lg-4 col-md-3">
+        <h5 class="footer-subtitle mb-3">Useful Links</h5>
+        <ul class="footer-links list-unstyled">
+          <li><a href="index">Home</a></li>
+          <li><a href="about">About Us</a></li>
+          <li><a href="term-and-condition">Terms & Condition</a></li>
+          <li><a href="faq">FAQ</a></li>
+        </ul>
       </div>
+
+      <!-- SERVICES -->
+      <div class="col-lg-4 col-md-3">
+        <h5 class="footer-subtitle mb-3">Our Services</h5>
+        <ul class="footer-links list-unstyled">
+          <li><a href="contact">Contact</a></li>
+          <li><a href="packages">Packages</a></li>
+          <li><a href="reviews">Reviews</a></li>
+        </ul>
+      </div>
+
     </div>
 
-  </footer>
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom text-center pt-4 mt-3 border-top border-secondary">
+      <p class="mb-0 small">
+        © <?= date("Y"); ?> <strong><?= $profile_row['name']; ?></strong> — All Rights Reserved
+      </p>
+    </div>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  </div>
+
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+  <i class="bi bi-arrow-up-short"></i>
+</a>
 
   <!-- Preloader -->
   <div id="preloader"></div>

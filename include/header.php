@@ -108,26 +108,33 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container position-relative d-flex align-items-center justify-content-between">
+<header id="header" class="header d-flex align-items-center sticky-top">
+  <div class="container-fluid container d-flex align-items-center justify-content-between">
 
-      <a href="index" class="d-flex align-items-center me-aut">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <img width="70" src="admin/image/<?= $about_row['logo'];?>">
-      </a>
+    <!-- LEFT: LOGO -->
+    <a href="index" class="logo d-flex align-items-center">
+      <img src="admin/image/<?= $about_row['logo']; ?>" width="70" alt="Logo">
+    </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index" class="active">Home</a></li>
-          <li><a href="about">About</a></li>
-          <li><a href="packages">Packages</a></li>
-          <li><a href="contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+    <!-- CENTER: NAV MENU (Sailor requires single UL) -->
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index" class="<?= basename($_SERVER['PHP_SELF'])=='index.php'?'active':'' ?>">Home</a></li>
+        <li><a href="about" class="<?= basename($_SERVER['PHP_SELF'])=='about.php'?'active':'' ?>">About</a></li>
+        <li><a href="packages" class="<?= basename($_SERVER['PHP_SELF'])=='packages.php'?'active':'' ?>">Packages</a></li>
+        <li><a href="contact" class="<?= basename($_SERVER['PHP_SELF'])=='contact.php'?'active':'' ?>">Contact</a></li>
+      </ul>
+      <!-- MOBILE TOGGLE (Required for Sailor JS) -->
+      <i class="mobile-nav-toggle bi bi-list d-xl-none"></i>
+    </nav>
 
-      <a target="_blank" class="btn-getstarted" href="https://wa.me/<?= $about_row['phone']; ?>">Get Started</a>
+    <!-- RIGHT CTA BUTTON (desktop only) -->
+    <a href="https://wa.me/<?= $about_row['phone']; ?>" 
+       class="btn-getstarted d-none d-xl-inline-block">
+      Get Started
+    </a>
 
-    </div>
-  </header>
+  </div>
+</header>
+
+

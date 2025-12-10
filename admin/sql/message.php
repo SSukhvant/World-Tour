@@ -1,22 +1,16 @@
 <?php
-	include("../include/connectDB.php");
-	$con = connectDB();
+include __DIR__ . '/../include/connectDB.php';
+$con = connectDB();
 
+if (isset($_GET['message_delete_id'])) {
+    $id = intval($_GET['message_delete_id']);
 
-	// Delete Appointment *********************************************************************
+    $stmt = mysqli_prepare($con, "DELETE FROM message WHERE id = ?");
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
 
-		if(isset($_GET['message_delete_id'])){
-				$id = $_GET['message_delete_id'];
-
-				$delete_sql = "DELETE FROM message WHERE id = $id";
-		      	$delete_result = mysqli_query($con,$delete_sql);
-		      	if($delete_result){
-		      		header('location:../message.php');
-		      	}else{
-		      		echo "not delete";
-		      	}
-			}
-
-
-
+    header('Location: ../message.php');
+    exit;
+}
 ?>

@@ -1,70 +1,35 @@
-  <?php 
-      include("include/header.php");
+<?php include('include/header.php'); ?>
 
-      if(isset($_GET['id'])){
-        $id = $_GET['id'];
-        $sql = "SELECT * FROM message WHERE id='$id'";
-        $result = mysqli_query($con,$sql);
-        $row = mysqli_fetch_assoc($result);
-      }
-  ?>
+<?php
+$id = $_GET['id'];
+$sql = mysqli_query($con, "SELECT * FROM message WHERE id = $id LIMIT 1");
+$details = mysqli_fetch_assoc($sql);
+?>
 
-    <div id="page-wrapper">
-    <br><br>
-    <div class="container-fluid">
-         <div class="row">
-            
-            <!-- /.col-lg-6 -->
-            <div class="col">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                       <a href="message" class="btn btn-info btn-sm">back</a>
-                    </div>
-                    <!-- /.panel-heading -->
-                    <div class="panel-body">
-                       
-                       <form">
+<div id="page-wrapper">
+<br><br>
+<div class="container-fluid">
 
-                         <div class="row">
-                            <div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Message Details</h4>
+        </div>
 
-                              <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Name</label>
-                                <input type="text" value="<?= $row['name'];?>" name="title" value="" class="form-control" disabled>
-                              </div><br>
+        <div class="panel-body">
 
-                              <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Email</label>
-                                <input type="text" value="<?= $row['email'];?>" class="form-control" disabled>
-                              </div><br>
+            <p><strong>Name:</strong> <?= $details['name'] ?></p>
+            <p><strong>Email:</strong> <?= $details['email'] ?></p>
+            <p><strong>Mobile:</strong> <?= $details['mobile'] ?></p>
+            <p><strong>Subject:</strong> <?= $details['subject'] ?></p>
+            <p><strong>Message:</strong> <?= nl2br($details['message']) ?></p>
+            <p><strong>Date:</strong> <?= $details['date'] ?></p>
 
-                              <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Number</label>
-                                <input type="text" value="<?= $row['subject'];?>" class="form-control" disabled>
-                              </div><br>
+            <a href="message.php" class="btn btn-primary btn-sm mt-3">Back</a>
 
-                              <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">Query</label>
-                                <textarea name="content" class="form-control"><?php echo $row['message'];?></textarea>
-                              </div><br>
-
-                        </div>
-                      </div>
-
-                      </form> 
-                        
-                    </div><br><br>
-                    <!-- /.panel-body -->
-                </div>
-                <!-- /.panel -->
-            </div>
-            
-            </div>
         </div>
     </div>
-    <script>
-    CKEDITOR.replace('content', {
-      height: 300,
-    });
-  </script>
-  <?php include('include/footer.php'); ?>
+
+</div>
+</div>
+
+<?php include('include/footer.php'); ?>

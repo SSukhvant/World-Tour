@@ -216,6 +216,52 @@ document.addEventListener("DOMContentLoaded", function () {
   counters.forEach((counter) => observer.observe(counter));
 });
 
+document.getElementById("newsletter-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let emailInput = document.querySelector("#newsletter-form input[type='email']");
+    let email = emailInput.value.trim();
+
+    let box = document.getElementById("newsletter-success");
+
+    let formData = new FormData();
+    formData.append("email", email);
+
+    fetch("admin/sql/newsletter.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())   // Parse JSON response
+    .then(data => {
+
+        box.innerHTML = data.message; // Show clean text only
+        box.classList.remove("d-none");
+
+        if (data.success) {
+            box.classList.remove("alert-danger");
+            box.classList.add("alert-success");
+            emailInput.value = "";
+        } else {
+            box.classList.remove("alert-success");
+            box.classList.add("alert-danger");
+        }
+
+        setTimeout(() => {
+            box.classList.add("d-none");
+        }, 3000);
+    })
+    .catch(err => {
+        box.innerHTML = "Network error. Please try again.";
+        box.classList.remove("d-none");
+        box.classList.add("alert-danger");
+
+        setTimeout(() => {
+            box.classList.add("d-none");
+        }, 3000);
+    });
+});
+
+
 /* ===========================
    OPEN PACKAGE ENQUIRY POPUP
 =========================== */
@@ -226,4 +272,3 @@ function openPackageEnquiry(packageName) {
   openPopup("packageEnquiryPopup");
 }
 
-openPackageEnquiry('Package Title')

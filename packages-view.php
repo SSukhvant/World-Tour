@@ -1,96 +1,159 @@
+<?php include("include/header.php"); ?>
 
-<?php include("include/header.php");?>
-  <?php 
-      if(isset($_GET['id'])){
-        $id = $_GET['id'];
-        $slug_url_sql = "SELECT * FROM packages WHERE id='$id'";
-        $slug_url_result = mysqli_query($con,$slug_url_sql);
-        $packages_row = mysqli_fetch_assoc($slug_url_result);
-    
-    }
-  ?>
+<?php 
+if(isset($_GET['id'])){
+  $id = (int) $_GET['id'];
+  $sql = mysqli_query($con, "SELECT * FROM packages WHERE id='$id' LIMIT 1");
+  $p = mysqli_fetch_assoc($sql);
+}
+?>
 
+<main class="main">
 
- <main class="main">
+  <!-- Breadcrumb -->
+  <div class="page-title light-background py-4">
+    <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-lg-center">
+      <h1 class="mb-2 mb-lg-0"><?= $p['title'] ?></h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="index">Home</a></li>
+          <li><a href="packages">Packages</a></li>
+          <li class="current"><?= $p['title'] ?></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
 
-    <!-- Page Title -->
-    <div class="page-title light-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Packages</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index">Home</a></li>
-            <li class="current">Packages</li>
-          </ol>
-        </nav>
-      </div>
-    </div><!-- End Page Title -->
+  <!-- MAIN CONTENT + STICKY SIDEBAR -->
+  <section class="section py-5 package-details">
+    <div class="container" style="max-width:1150px;">
 
-    <div class="container">
-      <div class="row">
+      <div class="row g-4">
 
-        <div class="col-lg-4">
+        <!-- LEFT CONTENT AREA -->
+        <div class="col-lg-8">
 
-          <!-- Blog Details Section -->
-          <section id="blog-details" class="blog-details section">
-            <div class="container">
+          <h2 class="package-title mb-3"><?= $p['title']; ?></h2>
 
-              <article class="article">
+          <div class="package-meta mb-3">
+            <span><i class="bi bi-geo-alt-fill text-danger"></i> <?= $p['destination']; ?> • <?= $p['category']; ?></span>
+            <span><i class="bi bi-clock"></i> <?= $p['time']; ?></span>
+            <span><i class="bi bi-cash-coin"></i> ₹<?= $p['price']; ?></span>
+          </div>
 
-                <div class="post-img">
-                  <div class="row">
-                        <div class="col-lg">
-                          <div class="col portfolio-item isotope-item filter-app">
-                            <a href="admin/image/<?= $packages_row['image1'];?>" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><img src="admin/image/<?= $packages_row['image1'];?>" class="img-fluid" alt=""></a>
-                          </div>
-                        </div>
-
-                        <!--<div class="col-lg-6">-->
-                        <!--  <div class="col portfolio-item isotope-item filter-app">-->
-                        <!--    <a href="admin/image/<?= $packages_row['image2'];?>" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><img src="admin/image/<?= $packages_row['image2'];?>" class="img-fluid" alt=""></a>-->
-                        <!--  </div>-->
-                        <!--</div>-->
-
-                        <!--<div class="col-lg-6">-->
-                        <!--  <video style="margin-top:20px;" width="360" height="250" controls><source src="admin/image/<?php echo $packages_row['image3'];?>" type="video/mp4"></video>-->
-                        <!--</div>-->
-                                   
-                      </div>
-                </div>
-               
-              </article>
-
-            </div>
-          </section><!-- /Blog Details Section -->
+          <!-- FULL CONTENT -->
+          <div class="package-full-content p-3 mb-4 shadow-sm rounded">
+            <?= $p['content']; ?>
+          </div>
 
         </div>
 
-        <div class="col-lg-8 sidebar blog-posts section">
-          <div class="-container">
-              <article class="article">
+        <!-- RIGHT SIDEBAR (STICKY) -->
+        <div class="col-lg-4">
 
-                <h2 class="title"><?php echo $packages_row['title']?></h2>
+          <div class="sticky-sidebar">
 
-                <div class="meta-top">
-                  <ul>
-                   <li class="d-flex align-items-center"><i class="bi bi-arrow-right"></i><?php echo $packages_row['time']?></li>
-                   <li class="d-flex align-items-center"><i class="bi bi-arrow-right"></i><?php echo $packages_row['price']?><sup>&nbsp;₹</sup></li>
-                  </ul>
-                </div><!-- End meta top -->
+            <!-- PACKAGE IMAGE WITH VIEW BUTTON -->
+            <div class="package-detail-img shadow-sm rounded overflow-hidden mb-4 position-relative">
+              
+              <img src="admin/image/<?= $p['image1']; ?>" class="img-fluid w-100 h-100">
 
-                <div class="content">
-                  <?php echo $packages_row['content']?>
-                </div><!-- End post content -->
+              <a href="admin/image/<?= $p['image1']; ?>" 
+                 class="view-btn glightbox" 
+                 data-gallery="package-gallery">
+                 <i class="bi bi-arrows-fullscreen"></i> View Image
+              </a>
 
-              </article>
+            </div>
 
+            <!-- OTHER PACKAGES -->
+            <h4 class="sidebar-title">Other Packages</h4>
+            <ul class="sidebar-package-list mb-4">
+              <?php 
+              $others = mysqli_query($con, 
+                "SELECT id,title FROM packages 
+                 WHERE id!='$id' ORDER BY id DESC LIMIT 10");
+              while($op = mysqli_fetch_assoc($others)){ ?>
+              
+              <li>
+                <a href="packages-view/<?= $op['id']; ?>">
+                  <i class="bi bi-chevron-right"></i> <?= $op['title']; ?>
+                </a>
+              </li>
+
+              <?php } ?>
+            </ul>
+
+            <!-- CTA SMALL BOX -->
+            <div class="cta-side-box text-center shadow-sm p-3 rounded mt-4">
+              <h5 class="fw-bold mb-2">Need Help?</h5>
+              <p class="small mb-3">Talk to our travel expert anytime.</p>
+              <a href="tel:<?= $about_row['phone']; ?>" 
+                 class="btn btn-primary w-100 fw-semibold rounded-pill">
+                 Call Us
+              </a>
+            </div>
 
           </div>
+
         </div>
 
       </div>
     </div>
+  </section>
 
-  </main>
 
-<?php include("include/footer.php");?>
+  <!-- POPULAR PACKAGES -->
+  <section class="popular-packages section py-5">
+    <div class="container" style="max-width:1150px;">
+
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="section-heading mb-0">Popular Packages</h3>
+        <a href="packages" class="text-primary small fw-semibold">View All Packages →</a>
+      </div>
+
+      <div class="row gy-4">
+
+        <?php 
+        $popular = mysqli_query($con,
+          "SELECT * FROM packages WHERE id!='$id' ORDER BY RAND() LIMIT 6");
+        while($pp = mysqli_fetch_assoc($popular)){ ?>
+        
+        <div class="col-md-6 col-lg-4">
+          <div class="package-card shadow-sm h-100">
+
+            <div class="package-image-wrapper">
+              <a href="packages-view/<?= $pp['id']; ?>">
+                <img src="admin/image/<?= $pp['image1']; ?>" class="package-img">
+              </a>
+            </div>
+
+            <div class="package-body p-3 d-flex flex-column">
+              <h3 class="package-title-sm"><?= $pp['title']; ?></h3>
+              <p class="package-location mb-1">
+                <i class="bi bi-geo-alt-fill text-danger"></i>
+                <?= $pp['destination']; ?> • <?= $pp['category']; ?>
+              </p>
+              <p class="package-price mb-2">
+                ₹<?= $pp['price']; ?>
+                <span><?= $pp['time']; ?></span>
+              </p>
+
+              <a href="packages-view/<?= $pp['id']; ?>" 
+                 class="btn btn-outline-primary w-100 mt-auto package-btn">
+                View Details
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <?php } ?>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<?php include("include/footer.php"); ?>
