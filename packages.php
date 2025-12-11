@@ -1,4 +1,14 @@
-<?php include("include/header.php"); ?>
+<?php 
+include("include/header.php");
+
+// SEO for Packages Page
+$seoData = [
+    'title' => 'Travel Packages | Book Your Dream Vacation with WorldTour4u',
+    'description' => 'Discover our collection of exclusive travel packages worldwide. From adventure tours to relaxing vacations, find the perfect holiday package for you. Best prices guaranteed!',
+    'keywords' => 'travel packages, tour packages, vacation packages, holiday packages, tour deals, adventure tours, travel deals',
+    'type' => 'website'
+];
+?>
 
 <main class="main">
 

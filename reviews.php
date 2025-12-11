@@ -17,6 +17,16 @@
   </div>
   <!-- End Page Title -->
 
+  <!-- REVIEWS INTRO SECTION -->
+  <section class="section py-5 light-background">
+    <div class="container" style="max-width:1100px;" data-aos="fade-up">
+      <div class="text-center">
+        <h2 class="section-heading fw-bold mb-3">Traveler Reviews</h2>
+        <p class="section-subtitle text-muted">Read genuine reviews from our customers and see why thousands of travelers choose WorldTour4u for their vacations</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Testimonials Section -->
   <section class="reviews-page section py-5">
     <div class="container" style="max-width:1100px;" data-aos="fade-up">

@@ -262,13 +262,13 @@ h6 {
   animation: slideDown .25s ease;
 }
 
-#navmenu > ul li {
+/* #navmenu > ul li {
   border-bottom: 1px solid #eee;
-}
+} */
 
-#navmenu > ul li:last-child {
+/* #navmenu > ul li:last-child {
   border-bottom: none;
-}
+} */
 
 #navmenu > ul li a {
   display: block;

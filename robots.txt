@@ -1,0 +1,45 @@
+# WorldTour4u - Robots.txt
+# Directives for search engine crawlers
+
+# Allow all bots to crawl the site
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /admin/*
+Disallow: /include/
+Disallow: /include/*
+Disallow: /cgi-bin/
+Disallow: /sql/
+Disallow: /*.php$
+Disallow: /*?*
+Disallow: /search/
+Disallow: /404.php
+
+# Allow indexing of important pages
+Allow: /index.php
+Allow: /packages.php
+Allow: /blog.php
+Allow: /about.php
+Allow: /contact.php
+
+# Crawl delay (optional - be nice to servers)
+Crawl-delay: 1
+
+# Sitemap location
+# Update with your actual domain after deployment
+Sitemap: http://localhost/worldtour4u/sitemap.php
+# Sitemap: https://yourdomain.com/sitemap.php
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /include/
+Disallow: /cgi-bin/
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /include/
+Disallow: /cgi-bin/

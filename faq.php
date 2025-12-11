@@ -1,4 +1,14 @@
-<?php include("include/header.php");?>
+<?php 
+include("include/header.php");
+
+// SEO for FAQ Page
+$seoData = [
+    'title' => 'Frequently Asked Questions | WorldTour4u Travel',
+    'description' => 'Find answers to common questions about travel packages, bookings, cancellations, and travel insurance. Visit our FAQ page for more information.',
+    'keywords' => 'FAQ, frequently asked questions, travel help, travel information, booking help',
+    'type' => 'website'
+];
+?>
 <style>
         .faq-header {
           font-size: 42px;
@@ -80,27 +90,42 @@
 
 <div class="page-title light-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">FAQ</h1>
+        <h1 class="mb-2 mb-lg-0">Frequently Asked Questions</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index">Home</a></li>
             <li class="current">FAQ</li>
           </ol>
         </nav>
       </div>
     </div><!-- End Page Title -->
-<br><br>
-<!-- Term And Condition Start -->
+
+<!-- FAQ INTRO SECTION -->
+<section class="section py-5 light-background">
+  <div class="container" style="max-width:1100px;" data-aos="fade-up">
+    <div class="text-center">
+      <h2 class="section-heading fw-bold mb-3">Got Questions?</h2>
+      <p class="section-subtitle text-muted">Find answers to the most common questions about our travel packages, bookings, and services. Can't find what you're looking for? <a href="contact" class="link-primary">Contact us</a></p>
+    </div>
+  </div>
+</section>
+<br>
+<!-- FAQ Content Start -->
     <?php 
         $faqs_sql = "SELECT * FROM faqs ORDER BY id DESC";
         $faqs_result = mysqli_query($con,$faqs_sql);
+        $faqs_array = [];
+        mysqli_data_seek($faqs_result, 0);
+        while($row = mysqli_fetch_assoc($faqs_result)) {
+            $faqs_array[] = $row;
+        }
     ?>
     <div class="container-xxl py-6">
         <div class="container">
             <div class="row g-5">
                 
                 <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="faq-header">Frequently Asked Questions</div>
+                    <h2 class="faq-header">Common Questions About Our Travel Services</h2>
 
             <div class="faq-content">
                 <?php while($faqs_row = mysqli_fetch_assoc($faqs_result)) { ?>
@@ -117,5 +142,31 @@
 </div>
 </div>
 
+<?php
+// Generate FAQ Schema for better SEO
+if (!empty($faqs_array)) {
+    $faqSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'FAQPage',
+        'mainEntity' => []
+    ];
+    
+    foreach ($faqs_array as $faq) {
+        $faqSchema['mainEntity'][] = [
+            '@type' => 'Question',
+            'name' => htmlspecialchars($faq['title']),
+            'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text' => strip_tags($faq['description'])
+            ]
+        ];
+    }
+    ?>
+    <script type="application/ld+json">
+    <?php echo json_encode($faqSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
+    </script>
+    <?php
+}
+?>
 
 <?php include("include/footer.php");?>

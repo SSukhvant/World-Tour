@@ -5,6 +5,15 @@ if(isset($_GET['id'])){
   $id = (int) $_GET['id'];
   $sql = mysqli_query($con, "SELECT * FROM packages WHERE id='$id' LIMIT 1");
   $p = mysqli_fetch_assoc($sql);
+  
+  // SEO for Package Details Page
+  $seoData = [
+      'title' => $p['title'] . ' - Book Now | WorldTour4u',
+      'description' => substr(strip_tags($p['content']), 0, 160) . '...',
+      'keywords' => $p['destination'] . ', ' . $p['category'] . ', travel package, tour, vacation',
+      'image' => (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]/admin/image/" . htmlspecialchars($p['image1']),
+      'type' => 'product'
+  ];
 }
 ?>
 
@@ -155,5 +164,12 @@ if(isset($_GET['id'])){
   </section>
 
 </main>
+
+<?php 
+// Generate Package Product Schema
+if(isset($p) && $p) {
+    generatePackageSchema($p);
+}
+?>
 
 <?php include("include/footer.php"); ?>

@@ -2,6 +2,7 @@
     include("admin/include/connectDB.php");
     include("include/BrowserDetection.php");
     include("include/Mobile_Detect.php");
+    include("include/seo.php");
     setcookie('visitor_logged', '1', time() + 1200, "/");
     $con = connectDB();
 
@@ -76,9 +77,58 @@
   <base href="<?php echo $_SERVER['PHP_SELF'];?>" target="_self">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title><?= $profile_row['name'];?></title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  
+  <?php
+  // SEO Meta Tags - Use page-specific SEO data or defaults
+  $defaultSEO = [
+      'title' => $profile_row['name'],
+      'description' => 'Explore amazing travel packages, book tours, and create unforgettable travel experiences with WorldTour4u - Your Trusted Travel & Tour Operator.',
+      'keywords' => 'travel packages, tour operator, vacation, holidays, travel agency, worldwide tours, adventure travel',
+      'url' => (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]",
+      'image' => (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]/admin/image/" . htmlspecialchars($about_row['logo']),
+      'type' => 'website'
+  ];
+  
+  // Use page-specific SEO if defined, otherwise use defaults
+  $seo = isset($seoData) ? array_merge($defaultSEO, $seoData) : $defaultSEO;
+  
+  // Sanitize
+  $seoTitle = htmlspecialchars($seo['title'], ENT_QUOTES, 'UTF-8');
+  $seoDesc = htmlspecialchars($seo['description'], ENT_QUOTES, 'UTF-8');
+  $seoKeywords = htmlspecialchars($seo['keywords'], ENT_QUOTES, 'UTF-8');
+  $seoUrl = htmlspecialchars($seo['url'], ENT_QUOTES, 'UTF-8');
+  $seoImage = htmlspecialchars($seo['image'], ENT_QUOTES, 'UTF-8');
+  $seoType = htmlspecialchars($seo['type'], ENT_QUOTES, 'UTF-8');
+  ?>
+  
+  <title><?= $seoTitle ?></title>
+  <meta name="description" content="<?= $seoDesc ?>">
+  <meta name="keywords" content="<?= $seoKeywords ?>">
+  <meta name="author" content="WorldTour4u">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  
+  <link rel="canonical" href="<?= $seoUrl ?>">
+  
+  <!-- Open Graph Tags (Social Media) -->
+  <meta property="og:title" content="<?= $seoTitle ?>">
+  <meta property="og:description" content="<?= $seoDesc ?>">
+  <meta property="og:url" content="<?= $seoUrl ?>">
+  <meta property="og:image" content="<?= $seoImage ?>">
+  <meta property="og:type" content="<?= $seoType ?>">
+  <meta property="og:site_name" content="WorldTour4u">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<?= $seoTitle ?>">
+  <meta name="twitter:description" content="<?= $seoDesc ?>">
+  <meta name="twitter:image" content="<?= $seoImage ?>">
+  <meta name="twitter:site" content="@worldtour4u">
+  
+  <!-- Hreflang Tags -->
+  <?php generateHrefLangTags(); ?>
 
   <!-- Favicons -->
   <link href="admin/image/<?= $about_row['logo'];?>" rel="icon">

@@ -1,4 +1,14 @@
-<?php include("include/header.php"); ?>
+<?php 
+include("include/header.php");
+
+// SEO for Contact Us Page
+$seoData = [
+    'title' => 'Contact WorldTour4u | Get in Touch with Our Team',
+    'description' => 'Have questions about travel packages? Contact WorldTour4u today. Call us, email, or fill out our contact form. We are here to help you plan your perfect vacation.',
+    'keywords' => 'contact us, travel inquiries, get in touch, customer support, travel booking',
+    'type' => 'website'
+];
+?>
 
 <main class="main">
 
@@ -217,5 +227,26 @@
 
 
 </main>
+
+<?php
+// Generate Contact/Organization Schema
+$contactSchema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'ContactPage',
+    'name' => 'WorldTour4u Contact',
+    'url' => (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]",
+    'contactPoint' => [
+        '@type' => 'ContactPoint',
+        'contactType' => 'Customer Service',
+        'telephone' => $about_row['phone'] ?? '+91-XXXXXXXXXX',
+        'email' => $about_row['email'] ?? 'info@worldtour4u.com',
+        'areaServed' => 'IN'
+    ]
+];
+?>
+
+<script type="application/ld+json">
+<?php echo json_encode($contactSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
+</script>
 
 <?php include("include/footer.php"); ?>
