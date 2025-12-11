@@ -272,3 +272,30 @@ function openPackageEnquiry(packageName) {
   openPopup("packageEnquiryPopup");
 }
 
+// Move legacy inline jQuery message form handler to vanilla JS
+document.addEventListener('DOMContentLoaded', function () {
+  const messageForm = document.getElementById('message');
+  if (!messageForm) return;
+
+  messageForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(messageForm);
+
+    fetch('sql/message.php', {
+      method: 'POST',
+      body: formData
+    })
+      .then((res) => res.text())
+      .then((responseHtml) => {
+        const successBox = document.getElementById('success');
+        if (successBox) successBox.innerHTML = responseHtml;
+        messageForm.reset();
+      })
+      .catch(() => {
+        const successBox = document.getElementById('success');
+        if (successBox) successBox.innerHTML = "<span style='color: red;'>Error submitting form. Please try again.</span>";
+      });
+  });
+});
+

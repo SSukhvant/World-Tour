@@ -64,44 +64,24 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="assets/vendor/php-email-form/validate.js" defer></script>
+    <script src="assets/vendor/aos/aos.js" defer></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" defer></script>
 
- <!-- Sailor Theme JS -->
-<script src="assets/js/main.js"></script>
+   <!-- Sailor Theme JS -->
+  <script src="assets/js/main.js" defer></script>
 
-<!-- custom popup + search JS -->
-<script src="assets/js/custom.js?v=1"></script>
+  <!-- custom popup + search JS -->
+  <script src="assets/js/custom.js?v=1" defer></script>
 
-      <script>
-        $(document).ready(function() {
-            $('#message').on('submit', function(e) {
-                e.preventDefault();
-                $.ajax({
-                    url: 'sql/message.php',
-                    type: 'POST',
-                    data: $(this).serialize(),
-                    success: function(response) {
-                        $('#success').html(response);
-                        $('#message')[0].reset(); // Corrected to reset the right form
-                    },
-                    error: function() {
-                        $('#success').html("<span style='color: red;'>Error submitting form. Please try again.</span>");
-                    }
-                });
-            });
-        });
-
-
-</script>
+  <!-- Inline message handler moved to assets/js/custom.js -->
 
 </body>
 

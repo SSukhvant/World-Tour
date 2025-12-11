@@ -12,13 +12,15 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Nunito",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Nunito", sans-serif;
+  --nav-font: "Poppins", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #000000; /* Color for headings, subheadings and title throughout the website */
@@ -29,7 +31,7 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #556270;  /* The default color of the main navmenu links */
+  --nav-color: #556270; /* The default color of the main navmenu links */
   --nav-hover-color: #d9232d; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
@@ -181,7 +183,7 @@ h6 {
     padding: 8px 4px !important;
     position: relative;
     text-decoration: none !important;
-    transition: .25s ease;
+    transition: 0.25s ease;
   }
 
   /* Smooth underline */
@@ -192,8 +194,8 @@ h6 {
     bottom: -3px;
     width: 0%;
     height: 2px;
-    background: #1A73E8;
-    transition: width .25s ease;
+    background: #1a73e8;
+    transition: width 0.25s ease;
   }
 
   /* Hover & Active */
@@ -203,12 +205,12 @@ h6 {
   }
 
   #navmenu ul li a.active {
-    color: #1A73E8 !important;
+    color: #1a73e8 !important;
     font-weight: 600;
   }
 }
 
-@media (max-width:1200px) {
+@media (max-width: 1200px) {
   #navmenu ul {
     display: none;
   }
@@ -218,12 +220,12 @@ h6 {
   CTA BUTTON – RIGHT SIDE
 **************************************************/
 .btn-getstarted {
-  background: #1A73E8 !important;
+  background: #1a73e8 !important;
   color: #fff !important;
   padding: 8px 26px !important;
   border-radius: 8px;
   font-weight: 600;
-  transition: .25s ease;
+  transition: 0.25s ease;
 }
 
 .btn-getstarted:hover {
@@ -245,7 +247,7 @@ h6 {
 .mobile-nav-toggle {
   font-size: 32px !important;
   cursor: pointer;
-  color: #1A73E8;
+  color: #1a73e8;
 }
 
 .mobile-nav-active #navmenu > ul {
@@ -258,17 +260,13 @@ h6 {
   width: 90%;
   padding: 15px 0;
   border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  animation: slideDown .25s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  animation: slideDown 0.25s ease;
 }
 
-/* #navmenu > ul li {
+#navmenu > ul li {
   border-bottom: 1px solid #eee;
-} */
-
-/* #navmenu > ul li:last-child {
-  border-bottom: none;
-} */
+}
 
 #navmenu > ul li a {
   display: block;
@@ -280,14 +278,19 @@ h6 {
 
 #navmenu > ul li a:hover {
   /* background: #eef5ff; */
-  color: #1A73E8 !important;
+  color: #1a73e8 !important;
 }
 
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
 
 /*--------------------------------------------------------------
 # Global Footer
@@ -301,7 +304,8 @@ h6 {
 
 .footer .footer-top {
   padding-top: 50px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .footer .footer-about .logo {
@@ -409,7 +413,7 @@ h6 {
   border-color: var(--accent-color);
 }
 
-.footer .footer-newsletter .newsletter-form input[type=email] {
+.footer .footer-newsletter .newsletter-form input[type="email"] {
   border: 0;
   padding: 4px;
   width: 100%;
@@ -417,11 +421,11 @@ h6 {
   color: var(--default-color);
 }
 
-.footer .footer-newsletter .newsletter-form input[type=email]:focus-visible {
+.footer .footer-newsletter .newsletter-form input[type="email"]:focus-visible {
   outline: none;
 }
 
-.footer .footer-newsletter .newsletter-form input[type=submit] {
+.footer .footer-newsletter .newsletter-form input[type="submit"] {
   border: 0;
   font-size: 16px;
   padding: 0 20px;
@@ -432,13 +436,14 @@ h6 {
   border-radius: 0 4px 4px 0;
 }
 
-.footer .footer-newsletter .newsletter-form input[type=submit]:hover {
+.footer .footer-newsletter .newsletter-form input[type="submit"]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
 .footer .copyright {
   padding: 25px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .footer .copyright p {
@@ -552,11 +557,11 @@ h6 {
   font-weight: 400;
 }
 
-.page-title .breadcrumbs ol li+li {
+.page-title .breadcrumbs ol li + li {
   padding-left: 10px;
 }
 
-.page-title .breadcrumbs ol li+li::before {
+.page-title .breadcrumbs ol li + li::before {
   content: "/";
   display: inline-block;
   padding-right: 10px;
@@ -576,7 +581,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 66px;
@@ -613,14 +617,14 @@ section,
   content: "";
   position: absolute;
   top: 50%;
-  width: 30px;     /* line length */
-  height: 1.4px;    /* line thickness */
+  width: 30px; /* line length */
+  height: 1.4px; /* line thickness */
   background: var(--accent-color);
   transform: translateY(-50%);
 }
 
 .section-title h2::before {
-  left: -40px;     /* adjust so line touches title edge */
+  left: -40px; /* adjust so line touches title edge */
 }
 
 .section-title h2::after {
@@ -628,7 +632,6 @@ section,
 }
 
 /* .section-title { padding-bottom: 20px; position: relative; } .section-title h2 { font-size: 14px; font-weight: 500; padding: 0; line-height: 1px; margin: 0; letter-spacing: 1.5px; text-transform: uppercase; color: color-mix(in srgb, var(--default-color), transparent 50%); position: relative; } .section-title h2::after { content: ""; width: 120px; height: 1px; display: inline-block; background: var(--accent-color); margin: 4px 10px; } */
-
 
 .section-title p {
   color: var(--heading-color);
@@ -730,13 +733,15 @@ section,
   font-weight: 700 !important;
   color: #ffffff !important;
   margin-bottom: 12px !important;
-  text-shadow: 0 3px 10px rgba(0,0,0,0.4);
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
   letter-spacing: 0.5px;
   text-align: center;
 }
 
-@media(max-width:768px){
-  .hero h2 { font-size: 32px !important; }
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 32px !important;
+  }
 }
 
 /* Subheading */
@@ -744,12 +749,14 @@ section,
   font-size: 20px !important;
   color: #f2f2f2 !important;
   margin-bottom: 25px !important;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
   text-align: center;
 }
 
-@media(max-width:768px){
-  .hero p { font-size: 15px !important; }
+@media (max-width: 768px) {
+  .hero p {
+    font-size: 15px !important;
+  }
 }
 
 /* .hero .btn-get-started {
@@ -781,7 +788,7 @@ section,
 
 /* Primary CTA */
 .btn-hero-primary {
-  background: #1A73E8 !important;
+  background: #1a73e8 !important;
   color: #ffffff !important;
   padding: 12px 32px !important;
   border-radius: 8px !important;
@@ -790,7 +797,7 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: .25s;
+  transition: 0.25s;
 }
 
 .btn-hero-primary:hover {
@@ -809,12 +816,12 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: .25s;
+  transition: 0.25s;
 }
 
 .btn-hero-outline:hover {
   background: #ffffff !important;
-  color: #1A73E8 !important;
+  color: #1a73e8 !important;
   transform: translateY(-2px);
 }
 
@@ -836,7 +843,6 @@ section,
 }
 
 @media (min-width: 1024px) {
-
   .hero .carousel-control-prev,
   .hero .carousel-control-next {
     width: 5%;
@@ -1153,10 +1159,11 @@ section,
 }
 
 .about-2 .nav-pills {
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
-.about-2 .nav-pills li+li {
+.about-2 .nav-pills li + li {
   margin-left: 40px;
 }
 
@@ -1398,7 +1405,7 @@ section,
   color: var(--contrast-color);
 }
 
-.team .team-member .social a+a {
+.team .team-member .social a + a {
   margin-left: 8px;
 }
 
@@ -1486,7 +1493,8 @@ section,
   transition: 0.3s;
   color: var(--default-color);
   border-radius: 0;
-  border-right: 2px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-right: 2px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
   font-weight: 600;
   font-size: 15px;
 }
@@ -1545,7 +1553,8 @@ section,
   display: block;
   line-height: 1;
   padding: 8px 0 8px 15px;
-  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
+  border-left: 3px solid
+    color-mix(in srgb, var(--default-color), transparent 70%);
   margin: 20px 0;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   transition: 0.3s;
@@ -1609,14 +1618,20 @@ section,
   position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: color-mix(in srgb, var(--default-color), transparent 85%);
   opacity: 1;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet-active {
   background-color: var(--accent-color);
 }
 
@@ -1631,7 +1646,8 @@ section,
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .portfolio-details .portfolio-info ul {
@@ -1640,7 +1656,7 @@ section,
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.portfolio-details .portfolio-info ul li + li {
   margin-top: 10px;
 }
 
@@ -1812,7 +1828,7 @@ section,
   margin: 0;
 }
 
-.blog-posts .meta-top ul li+li {
+.blog-posts .meta-top ul li + li {
   padding-left: 20px;
 }
 
@@ -1971,7 +1987,7 @@ section,
   margin: 0;
 }
 
-.blog-details .meta-top ul li+li {
+.blog-details .meta-top ul li + li {
   padding-left: 20px;
 }
 
@@ -1991,7 +2007,8 @@ section,
 
 .blog-details .meta-bottom {
   padding-top: 10px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .blog-details .meta-bottom i {
@@ -2030,7 +2047,7 @@ section,
   display: inline-block;
 }
 
-.blog-details .meta-bottom .tags li+li::before {
+.blog-details .meta-bottom .tags li + li::before {
   padding-right: 6px;
   color: var(--default-color);
   content: ",";
@@ -2187,7 +2204,7 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
-.contact .info-item+.info-item {
+.contact .info-item + .info-item {
   margin-top: 40px;
 }
 
@@ -2222,31 +2239,35 @@ section,
   height: 100%;
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
+.contact .php-email-form input[type="text"],
+.contact .php-email-form input[type="email"],
 .contact .php-email-form textarea {
   font-size: 14px;
   padding: 10px 15px;
   box-shadow: none;
   border-radius: 0;
   color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  background-color: color-mix(
+    in srgb,
+    var(--background-color),
+    transparent 50%
+  );
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form input[type="text"]:focus,
+.contact .php-email-form input[type="email"]:focus,
 .contact .php-email-form textarea:focus {
   border-color: var(--accent-color);
 }
 
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form input[type="text"]::placeholder,
+.contact .php-email-form input[type="email"]::placeholder,
 .contact .php-email-form textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type="submit"] {
   color: var(--contrast-color);
   background: var(--accent-color);
   border: 0;
@@ -2255,7 +2276,7 @@ section,
   border-radius: 4px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type="submit"]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
@@ -2300,7 +2321,7 @@ section,
   transition: 0.3s;
 }
 
-.search-widget form input[type=text] {
+.search-widget form input[type="text"] {
   border: 0;
   padding: 4px;
   border-radius: 4px;
@@ -2309,7 +2330,7 @@ section,
   color: var(--default-color);
 }
 
-.search-widget form input[type=text]:focus {
+.search-widget form input[type="text"]:focus {
   outline: none;
 }
 
