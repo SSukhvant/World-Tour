@@ -70,6 +70,11 @@
   }
 ?>
 
+<?php
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -151,8 +156,8 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-  <link href="assets/css/custom.css" rel="stylesheet">
+  <link href="assets/css/main.css?v=<?= time(); ?>" rel="stylesheet">
+  <link href="assets/css/custom.css?v=<?= time(); ?>" rel="stylesheet">
 
 </head>
 

@@ -52,7 +52,7 @@ $seoData = [
                   ₹<?= $p['price']; ?>
                   <span class="package-time"><?= $p['time']; ?></span>
                 </p>
-                <a href="packages-view/<?= $p['id']; ?>" class="btn btn-primary w-100 mt-auto package-btn">
+                <a href="/packages-view.php?id=<?= urlencode($p['id']); ?>" class="btn btn-primary w-100 mt-auto package-btn">
                   View Details
                 </a>
               </div>

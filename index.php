@@ -16,77 +16,139 @@ $seoData = [
     </script>
   <?php endif; ?>
   <!-- Hero Section -->
-  <section id="hero" class="hero section dark-background">
-    <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-      <?php
-      $banner_sql = "SELECT * FROM banner WHERE id='1'";
-      $banner_result = mysqli_query($con, $banner_sql);
-      $banner_row = mysqli_fetch_assoc($banner_result);
-      ?>
-      <div class="carousel-item active">
-        <img src="admin/image/<?= $banner_row['image']; ?>" alt="<?= htmlspecialchars($banner_row['title']) ?> - Travel with WorldTour4u">
-        <div class="carousel-container">
-          <h1><?= $banner_row['title']; ?></h1>
-          <p><?= $banner_row['content']; ?></p>
-          <div class="hero-buttons mt-3">
-            <a target="_blank" href="https://wa.me/<?= $about_row['phone']; ?>" class="btn-hero-primary">
-              <i class="bi bi-telephone-fill"></i> Call Us
-            </a>
-            <a href="packages" class="btn-hero-outline">
-              <i class="bi bi-arrow-right-circle"></i> Get Started
-            </a>
-          </div>
-        </div>
-      </div><!-- End Carousel Item -->
-      <?php
-      $banner_sql = "SELECT * FROM banner WHERE id='2'";
-      $banner_result = mysqli_query($con, $banner_sql);
-      $banner_row = mysqli_fetch_assoc($banner_result);
-      ?>
-      <div class="carousel-item">
-        <img src="admin/image/<?= $banner_row['image']; ?>" alt="<?= htmlspecialchars($banner_row['title']) ?> - Best Travel Packages">
-        <div class="carousel-container">
-          <h1><?= $banner_row['title']; ?></h1>
-          <p><?= $banner_row['content']; ?></p>
-          <div class="hero-buttons mt-3">
-            <a target="_blank" href="https://wa.me/<?= $about_row['phone']; ?>" class="btn-hero-primary">
-              <i class="bi bi-telephone-fill"></i> Call Us
-            </a>
-            <a href="packages" class="btn-hero-outline">
-              <i class="bi bi-arrow-right-circle"></i> Get Started
-            </a>
-          </div>
-        </div>
-      </div><!-- End Carousel Item -->
-      <?php
-      $banner_sql = "SELECT * FROM banner WHERE id='3'";
-      $banner_result = mysqli_query($con, $banner_sql);
-      $banner_row = mysqli_fetch_assoc($banner_result);
-      ?>
-      <div class="carousel-item">
-        <img src="admin/image/<?= $banner_row['image']; ?>" alt="<?= htmlspecialchars($banner_row['title']) ?> - Explore the World">
-        <div class="carousel-container">
-          <h1><?= $banner_row['title']; ?></h1>
-          <p><?= $banner_row['content']; ?></p>
-          <div class="hero-buttons mt-3">
-            <a target="_blank" href="https://wa.me/<?= $about_row['phone']; ?>" class="btn-hero-primary">
-              <i class="bi bi-telephone-fill"></i> Call Us
-            </a>
-            <a href="packages" class="btn-hero-outline">
-              <i class="bi bi-arrow-right-circle"></i> Get Started
-            </a>
-          </div>
-        </div>
-      </div><!-- End Carousel Item -->
-      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-      </a>
-      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-      </a>
-      <ol class="carousel-indicators"></ol>
+<!-- ===============================
+   ADVERTISEMENT HERO CAROUSEL
+================================ -->
+<section id="hero" class="hero-ad-carousel shadow-sm">
+
+  <div id="heroAdCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5500">
+
+    <?php
+    $hero_sql = "SELECT * FROM banner ORDER BY id DESC LIMIT 5";
+    $hero_result = mysqli_query($con, $hero_sql);
+    $i = 0;
+    ?>
+
+    <div class="carousel-inner">
+
+      <?php while ($row = mysqli_fetch_assoc($hero_result)) { ?>
+      <div class="carousel-item <?= ($i === 0) ? 'active' : ''; ?>">
+
+        <!-- Background -->
+        <div class="hero-bg"
+             style="background-image:url('admin/image/<?= $row['image']; ?>')"></div>
+
+        <div class="container">
+          <div class="row align-items-center hero-content">
+
+            <!-- LEFT -->
+            <div class="col-lg-6 hero-left">
+              <span class="hero-badge">Popular Tour</span>
+
+              <h1 class="hero-title"><?= $row['title']; ?></h1>
+
+              <p class="hero-subtitle">
+                Discover premium travel packages with flexible payment options,
+                luxury comfort and trusted local support.
+              </p>
+
+              <div class="hero-actions">
+                <a href="packages.php" class="btn btn-primary hero-btn">
+                  Explore Packages
+                </a>
+                <a href="#contact" class="btn hero-btn-outline text-white">
+                  Enquire Now
+                </a>
+              </div>
+
+              <div class="hero-trust">
+                <span><i class="bi bi-star-fill"></i> 4.8 Rated</span>
+                <span><i class="bi bi-people"></i> 5000+ Travelers</span>
+              </div>
+
+
+              <div class="hero-popular-packages">
+  <div class="hero-mini-card">
+    <img src="admin/image/6851c37eb9ae4_Thailand_v8.jpg" alt="Palawan">
+    <div class="hero-mini-body">
+      <h6>Trip to Palawan</h6>
+      <span><i class="bi bi-people"></i> 31 people going</span>
     </div>
-  </section><!-- /Hero Section -->
+  </div>
+
+  <div class="hero-mini-card">
+    <img src="admin/image/6851c37eb9ae4_Thailand_v8.jpg" alt="Baguio">
+    <div class="hero-mini-body">
+      <h6>Trip to Baguio</h6>
+      <span><i class="bi bi-people"></i> 27 people going</span>
+    </div>
+  </div>
+
+  <div class="hero-mini-card">
+    <img src="admin/image/6851c37eb9ae4_Thailand_v8.jpg" alt="Boracay">
+    <div class="hero-mini-body">
+      <h6>Trip to Boracay</h6>
+      <span><i class="bi bi-people"></i> 20 people going</span>
+    </div>
+  </div>
+</div>
+
+
+              <div class="row">
+                <div>
+                <!-- Top three cards with slider functionality, showcasing featured tour packages. Cards should be smaller, not too big. -->
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT CARD -->
+            <div class="col-lg-6 hero-right">
+              <div class="hero-package-card">
+
+                <div class="package-img-wrapper">
+                  <img src="admin/image/<?= $row['image']; ?>" alt="<?= $row['title']; ?>">
+                  <span class="package-tag">Featured</span>
+                </div>
+
+                <div class="package-body">
+                  <h3><?= $row['title']; ?></h3>
+
+                  <p class="package-location">
+                    <i class="bi bi-geo-alt"></i> India Tour Package
+                  </p>
+
+                  <div class="package-meta">
+                    <span><i class="bi bi-clock"></i> 5D / 4N</span>
+                    <span><i class="bi bi-car-front"></i> Cab Included</span>
+                  </div>
+
+                  <div class="package-footer">
+                    <div class="package-price">
+                      ₹14,999 <small>/person</small>
+                    </div>
+
+                    <a href="package-details.php?id=<?= $row['id']; ?>"
+                       class="btn btn-primary">
+                      View Details
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <?php $i++; } ?>
+
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- /Hero Section -->
   <!-- Service Section -->
   <section class="services-section" id="services">
     <div class="services-container container">
